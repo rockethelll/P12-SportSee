@@ -1,0 +1,14 @@
+@use '../../assets/style/variables.scss' as *;
+@use '../../assets/style/mixins.scss' as *;
+
+footer {
+  @include flexJccAic;
+
+  margin-top: auto;
+  background-color: $primary-color;
+  color: $secondary-color;
+  height: 80px;
+  font-size: 3rem;
+  text-align: center;
+  vertical-align: middle;
+}

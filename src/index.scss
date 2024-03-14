@@ -1,0 +1,7 @@
+@use './assets/style/reset.scss' as *;
+@use './assets/style/variables.scss' as *;
+@use './components/Navbar/Navbar.scss' as *;
+@use './components/Footer/Footer.scss' as *;
+@use './App.scss' as *;
+@use './pages/Home/Home' as *;
+@use './pages/Test/Test' as *;
