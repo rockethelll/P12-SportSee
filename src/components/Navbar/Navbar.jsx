@@ -3,10 +3,12 @@ import { Link } from 'react-router-dom';
 const Navbar = () => {
   return (
     <nav>
-      <img src="./images/image.png" alt="logo de test" />
+      <img src="./images/logo.png" alt="Sport See logo" />
       <div className="navlinks">
         <Link to="/">Accueil</Link>
-        <Link to="/test">Test</Link>
+        <Link to="/">Profil</Link>
+        <Link to="/">Réglage</Link>
+        <Link to="/">Communauté</Link>
       </div>
     </nav>
   );
