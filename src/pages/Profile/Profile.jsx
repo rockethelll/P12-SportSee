@@ -1,5 +1,5 @@
-const Home = () => {
-  return <div className="home">Welcome depuis Home</div>;
+const Profile = () => {
+  return <div className="home">Welcome depuis Profile</div>;
 };
 
-export default Home;
+export default Profile;
