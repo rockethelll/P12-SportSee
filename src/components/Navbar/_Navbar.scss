@@ -2,6 +2,9 @@
 @use '../../assets/style/mixins.scss' as *;
 
 nav {
+  position: fixed;
+  width: 100%;
+  z-index: 1;
   height: 90px;
   background-color: $primary-color;
   display: flex;

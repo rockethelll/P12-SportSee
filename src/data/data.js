@@ -260,7 +260,7 @@ const USER_PERFORMANCE = [
   },
 ];
 
-module.exports = {
+export {
   USER_MAIN_DATA,
   USER_ACTIVITY,
   USER_AVERAGE_SESSIONS,

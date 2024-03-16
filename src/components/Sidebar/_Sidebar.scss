@@ -19,6 +19,7 @@
       width: 64px;
       height: 64px;
       margin-bottom: 20px;
+      color: $white;
       cursor: pointer;
       &:last-child {
         margin-bottom: 0;
@@ -28,7 +29,7 @@
 
   .sidebar__copyright {
     position: absolute;
-    bottom: 200px;
+    bottom: 120px;
     width: 150px;
     color: $white;
     font-size: 12px;

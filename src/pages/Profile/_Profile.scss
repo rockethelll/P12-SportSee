@@ -1,10 +1,10 @@
 @use '../../assets/style/mixins.scss' as *;
 @use '../../assets/style/variables.scss' as *;
 
-.home {
-  @include flexJccAic;
-  height: 200px;
-  font-size: 3rem;
-  width: calc(100% - 120px);
+.container {
+  margin-left: 120px;
+  margin-top: 90px;
+  height: 100vh;
+  width: 100%;
   background-color: royalblue;
 }

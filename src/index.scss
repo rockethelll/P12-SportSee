@@ -1,5 +1,6 @@
 @use './assets/style/reset.scss' as *;
 @use './assets/style/variables.scss' as *;
+@use './pages/ErrorPage/Error' as *;
 @use './components/Navbar/Navbar.scss' as *;
 @use './App.scss' as *;
 @use './pages/Profile/Profile' as *;

@@ -41,14 +41,5 @@ module.exports = {
     'no-unused-vars': 'error',
     // Show a warning for unused components
     'react/jsx-no-undef': 'warn',
-    // Capitalize comments
-    'capitalized-comments': [
-      'error',
-      'always',
-      {
-        ignorePattern: 'pragma|ignored',
-        ignoreInlineComments: true,
-      },
-    ],
   },
 };
