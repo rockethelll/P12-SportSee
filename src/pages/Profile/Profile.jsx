@@ -1,9 +1,23 @@
 import { useParams } from 'react-router-dom';
-import { USER_MAIN_DATA } from '../../data/data';
 import { useFetchMainData } from '../../api/Api';
+import UserGreeting from '../../components/UserGreeting/UserGreeting';
+import { USER_MAIN_DATA } from '../../data/data';
 
+/**
+ * Profile page
+ * @function Profile
+ * @return {JSX.Element}
+ */
 const Profile = () => {
   const { id } = useParams();
+
+  /**
+   * Custom hook to fetch user data
+   * @function useFetchMainData
+   * @param {string} endpoint - Endpoint of the API
+   * @param {number} userId - User ID
+   * @return {Object} - User data and loading state
+   */
   const { userData, loading } = useFetchMainData(USER_MAIN_DATA, +id);
 
   return loading ? (
@@ -11,17 +25,7 @@ const Profile = () => {
     <p>Loading...</p>
   ) : (
     <div className="container">
-      <h1>Profile</h1>
-      {userData && (
-        <div>
-          {/* Affichez les données de l'utilisateur ici */}
-          <p>Id : {userData.id}</p>
-          <p>FirstName: {userData.userInfos.firstName}</p>
-          <p>LastName: {userData.userInfos.lastName}</p>
-          <p>Age: {userData.userInfos.age}</p>
-          {/* Ajoutez le reste des données d'utilisateur ici */}
-        </div>
-      )}
+      {userData && <UserGreeting userData={userData} />}
     </div>
   );
 };

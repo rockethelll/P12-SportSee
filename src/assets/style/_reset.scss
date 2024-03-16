@@ -5,7 +5,9 @@ html {
   flex-direction: column;
   margin: 0;
   padding: 0;
+  overflow-y: hidden;
 }
+
 * {
   box-sizing: border-box;
   font-family: 'Roboto', sans-serif;

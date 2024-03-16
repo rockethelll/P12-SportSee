@@ -1,0 +1,16 @@
+@use '../../assets/style/variables.scss' as *;
+
+.user-greeting {
+  h1 {
+    font-size: 48px;
+    margin: 0 0 40px;
+
+    span {
+      color: $red;
+    }
+  }
+  p {
+    font-size: 18px;
+    margin-bottom: 75px;
+  }
+}

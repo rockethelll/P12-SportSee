@@ -1,5 +1,9 @@
 import { Link } from 'react-router-dom';
 
+/**
+ * Error page
+ * @return {JSX.Element} - Error page
+ */
 const ErrorPage = () => {
   return (
     <div className="error404">
