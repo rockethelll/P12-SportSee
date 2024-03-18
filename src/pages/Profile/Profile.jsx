@@ -1,7 +1,8 @@
 import { useParams } from 'react-router-dom';
-import { useFetchMainData } from '../../api/Api';
-import UserGreeting from '../../components/UserGreeting/UserGreeting';
-import { USER_MAIN_DATA } from '../../data/data';
+// import useFetchMainData from '@/api/useFetchMainData';
+import UserGreeting from '@/components/UserGreeting/UserGreeting';
+// import { USER_MAIN_DATA } from '@/data/data';
+// import UserActivity from '@/components/UserActivity/UserActivity';
 
 /**
  * Profile page
@@ -18,16 +19,21 @@ const Profile = () => {
    * @param {number} userId - User ID
    * @return {Object} - User data and loading state
    */
-  const { userData, loading } = useFetchMainData(USER_MAIN_DATA, +id);
+  // const { userData, loading } = useFetchMainData(USER_MAIN_DATA, +id);
 
-  return loading ? (
+  return  (
     // Display loading message
-    <p>Loading...</p>
-  ) : (
+  //   <p>Loading...</p>
+  // ) : (
     <div className="container">
-      {userData && <UserGreeting userData={userData} />}
+      {/* {userData && ( */}
+      {/* <> */}
+      <UserGreeting id={id} />
+      {/* <UserActivity userData={userData} /> */}
+      {/* </> */}
+      {/* )} */}
     </div>
-  );
-};
+  )
+}
 
 export default Profile;

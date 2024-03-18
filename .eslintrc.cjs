@@ -27,7 +27,6 @@ module.exports = {
     'no-unexpected-multiline': 'error',
     'react/jsx-uses-react': 0,
     'jsx-a11y/label-has-associated-control': 'off',
-    'react/prop-types': 0,
     'react/jsx-props-no-spreading': 'off',
     // Allow arrow functions as React components
     'react/function-component-definition': [
@@ -41,5 +40,8 @@ module.exports = {
     'no-unused-vars': 'error',
     // Show a warning for unused components
     'react/jsx-no-undef': 'warn',
+    'eslint-disable-next-line import/no-unresolved': 0,
+    'import/no-unresolved': 'off',
+    'import/extensions': 'off',
   },
 };

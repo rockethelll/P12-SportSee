@@ -1,5 +1,5 @@
-@use '../../assets/style/mixins.scss' as *;
-@use '../../assets/style/variables.scss' as *;
+@use '@style/mixins.scss' as *;
+@use '@style/variables.scss' as *;
 
 .container {
   margin-left: 120px;
@@ -8,5 +8,5 @@
   padding-top: 70px;
   height: 100vh;
   width: 100%;
-  background-color: royalblue;
+  // background-color: royalblue;
 }

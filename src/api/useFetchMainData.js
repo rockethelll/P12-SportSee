@@ -18,8 +18,8 @@ const useFetchMainData = (url, id) => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const user = url;
-        const userId = user.find((res) => {
+        const userInfos = url;
+        const userId = userInfos.find((res) => {
           return res.id === id;
         });
         setUserData(userId);
@@ -34,13 +34,4 @@ const useFetchMainData = (url, id) => {
   return { userData, loading };
 };
 
-const useFetchActivity = () => {};
-const useFetchAverageSessions = () => {};
-const useFetchPerformance = () => {};
-
-export {
-  useFetchActivity,
-  useFetchAverageSessions,
-  useFetchMainData,
-  useFetchPerformance,
-};
+export default useFetchMainData;

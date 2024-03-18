@@ -1,6 +1,6 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
-import ErrorPage from '../pages/ErrorPage/ErrorPage';
-import Profile from '../pages/Profile/Profile';
+import ErrorPage from '@/pages/ErrorPage/ErrorPage';
+import Profile from '@/pages/Profile/Profile';
 
 /**
  * Router component responsible for defining application routes.
