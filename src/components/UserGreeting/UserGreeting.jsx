@@ -8,14 +8,7 @@ const UserGreeting = ({ id }) => {
   const hookManager = new HookManager();
 
   useEffect(() => {
-    const fetchUserData = async () => {
-      const data = await hookManager.getUserInfo(id);
-      if (data && data.userInfos) {
-        setUserData(data.userInfos);
-      }
-      setIsLoading(false);
-    };
-    fetchUserData();
+    hookManager.getUserInfo(id, setUserData, setIsLoading);
   }, [id]);
 
   return (
