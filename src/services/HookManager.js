@@ -9,7 +9,12 @@ export default class HookManager {
   }
 
   async getUserInfo(id) {
-    const userData = await this.dataUser.getUserData(id);
-    return userData;
+    // Catch user data
+    try {
+      const userData = await this.dataUser.getUserData(id);
+      return userData;
+    } catch (error) {
+      throw new Error('Error while retrieving user data', error);
+    }
   }
 }
