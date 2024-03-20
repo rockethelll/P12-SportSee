@@ -1,6 +1,6 @@
 import react from '@vitejs/plugin-react';
-import { defineConfig } from 'vite';
 import path from 'path';
+import { defineConfig } from 'vite';
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -9,12 +9,12 @@ export default defineConfig({
     alias: [
       {
         find: '@',
-        replacement: path.resolve(__dirname, 'src')
+        replacement: path.resolve(__dirname, 'src'),
       },
       {
         find: '@style',
-        replacement: path.resolve(__dirname, 'src/assets/style')
-      }
-    ]
-  }
+        replacement: path.resolve(__dirname, 'src/assets/style'),
+      },
+    ],
+  },
 });

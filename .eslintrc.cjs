@@ -43,5 +43,8 @@ module.exports = {
     'eslint-disable-next-line import/no-unresolved': 0,
     'import/no-unresolved': 'off',
     'import/extensions': 'off',
+    'no-console': ['warn', { allow: ['info', 'error'] }],
+    'eslint-disable-next-line react/prop-types': 0,
+    'class-methods-use-this': 0,
   },
 };

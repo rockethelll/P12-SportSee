@@ -1,19 +1,19 @@
-import {
-  Bar,
-  BarChart,
-  Legend,
-  ReferenceLine,
-  ResponsiveContainer,
-  Tooltip,
-  XAxis,
-  YAxis,
-} from 'recharts';
-import useFetchActivity from '@/api/useFetchMainData';
-import { USER_ACTIVITY } from '@/data/data';
+// import {
+//   Bar,
+//   BarChart,
+//   Legend,
+//   ReferenceLine,
+//   ResponsiveContainer,
+//   Tooltip,
+//   XAxis,
+//   YAxis,
+// } from 'recharts';
+// import useFetchActivity from '@/api/useFetchMainData';
+// import { USER_ACTIVITY } from '@/data/data';
 
 const UserActivity = () => {
-  const { userData } = useFetchActivity(USER_ACTIVITY, +id);
-  console.log('userData from UserActivity page', userData);
+  // const { userData } = useFetchActivity(USER_ACTIVITY, +id);
+  // console.log('userData from UserActivity page', userData);
 
   return (
     <div>TEST graph</div>
