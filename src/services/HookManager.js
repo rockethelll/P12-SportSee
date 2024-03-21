@@ -8,16 +8,26 @@ export default class HookManager {
     this.dataUser = useBackendData ? new ApiFetch() : new MockFetch();
   }
 
-  // Method to retrieve user main data
+  // Method to retrieve USER_MAIN_DATA
   async getUserInfo(id, setUSerData, setIsLoading) {
     try {
       setIsLoading(true);
       const userData = await this.dataUser.getUserData(id);
-      setUSerData(userData.userInfos);
+      setUSerData(userData);
     } catch (error) {
       console.error('Error while retrieving user mock data', error);
     } finally {
       setIsLoading(false);
+    }
+  }
+
+  // Method to retrieve USER_ACTIVITY
+  async getUserActivity(id, setUserData) {
+    try {
+      const UserActivity = await this.dataUser.getUserActivity(id);
+      setUserData(UserActivity);
+    } catch (error) {
+      console.error('Error while retrieving user mock data', error);
     }
   }
 }

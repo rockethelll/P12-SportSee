@@ -46,5 +46,9 @@ module.exports = {
     'no-console': ['warn', { allow: ['info', 'error'] }],
     'eslint-disable-next-line react/prop-types': 0,
     'class-methods-use-this': 0,
+    'react/forbid-prop-types': 'off',
+    'react/no-array-index-key': 'off',
+    'react/require-default-props': 'off',
+    'react/prop-types': 'off',
   },
 };

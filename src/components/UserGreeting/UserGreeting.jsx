@@ -17,7 +17,7 @@ const UserGreeting = ({ id }) => {
       {!isLoading && userData && (
         <>
           <h1>
-            Bonjour <span>{userData.firstName}</span>
+            Bonjour <span>{userData.userInfos.firstName}</span>
           </h1>
           <p>Félicitations ! Vous avez explosé vos objectifs hier 👏</p>
         </>

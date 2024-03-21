@@ -1,5 +1,6 @@
 import { useParams } from 'react-router-dom';
 import UserGreeting from '@/components/UserGreeting/UserGreeting';
+import UserActivity from '@/components/UserActivity/UserActivity';
 
 /**
  * Profile page
@@ -12,6 +13,7 @@ const Profile = () => {
   return (
     <div className="container">
       <UserGreeting id={id} />
+      <UserActivity id={id} />
     </div>
   );
 };
