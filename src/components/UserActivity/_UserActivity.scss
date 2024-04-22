@@ -1,13 +1,18 @@
+@use '@style/variables.scss' as *;
+
 .topGraph {
   box-shadow: 0px 2px 4px 0px #00000005;
-  background-color: #fbfbfb;
+  background-color: $background-grey;
   border-radius: 6px;
-  height: 230px;
+  height: 320px;
   width: 835px;
+  margin-bottom: 30px;
+  box-shadow: $shadow;
 
   h2 {
     font-size: 15px;
     padding: 20px 0 0;
+    margin: 0 0 64px 0;
   }
 
   // Space between the legend items
@@ -16,6 +21,6 @@
   }
   // Color of the legend text
   .recharts-legend-item-text {
-    color: #74798c !important;
+    color: $text-grey !important;
   }
 }

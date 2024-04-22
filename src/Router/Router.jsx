@@ -1,5 +1,7 @@
 import { Navigate, Route, Routes } from 'react-router-dom';
+
 import ErrorPage from '@/pages/ErrorPage/ErrorPage';
+import Home from '@/pages/Home/Home';
 import Profile from '@/pages/Profile/Profile';
 
 /**
@@ -10,9 +12,10 @@ const Router = () => {
   return (
     <Routes>
       {/* Redirect '/' to 'profile/12' for the project in development */}
-      <Route path="/" element={<Navigate replace to="/profile/12" />} />
-      <Route path="/profile/:id" element={<Profile />} />
-      <Route path="*" element={<ErrorPage />} />
+      {/* <Route path='/' element={<Navigate replace to='/profile/12' />} /> */}
+      <Route path='/' element={<Home />} />
+      <Route path='/profile/:id' element={<Profile />} />
+      <Route path='*' element={<ErrorPage />} />
     </Routes>
   );
 };

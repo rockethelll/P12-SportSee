@@ -1,54 +1,35 @@
 module.exports = {
-  env: {
-    browser: true,
-    es2021: true,
-  },
-  extends: ['airbnb', 'prettier'],
-  overrides: [
-    {
-      env: {
-        node: true,
-      },
-      files: ['.eslintrc.{js,cjs}'],
-      parserOptions: {
-        sourceType: 'script',
-      },
-    },
+  root: true,
+  env: { browser: true, es2020: true },
+  extends: [
+    'eslint:recommended',
+    'plugin:react/recommended',
+    'plugin:react/jsx-runtime',
+    'plugin:react-hooks/recommended',
   ],
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-  },
+  ignorePatterns: ['dist', '.eslintrc.cjs'],
+  parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
+  settings: { react: { version: '18.2' } },
+  plugins: ['react-refresh', 'simple-import-sort'],
   rules: {
-    'react/react-in-jsx-scope': 'off',
+    'react/prop-types': 'off',
+    'react-refresh/only-export-components': 'off',
     'react/no-unescaped-entities': 'off',
-    indent: 'error',
-    'react/jsx-indent': 'error',
-    'no-unexpected-multiline': 'error',
-    'react/jsx-uses-react': 0,
-    'jsx-a11y/label-has-associated-control': 'off',
-    'react/jsx-props-no-spreading': 'off',
-    // Allow arrow functions as React components
-    'react/function-component-definition': [
+    'no-unused-vars': 'off',
+    'simple-import-sort/imports': [
       'error',
       {
-        namedComponents: 'arrow-function',
+        groups: [
+          // External packages come first
+          ['^@?\\w'],
+          // Internal files
+          ['^@/'],
+          // Colocated files
+          ['^\\.\\./', '^\\./'],
+          // Style imports
+          ['^.+\\.?(css)$'],
+        ],
       },
     ],
-    'arrow-body-style': ['error', 'always'],
-    // Show an error for unused variables
-    'no-unused-vars': 'error',
-    // Show a warning for unused components
-    'react/jsx-no-undef': 'warn',
-    'eslint-disable-next-line import/no-unresolved': 0,
-    'import/no-unresolved': 'off',
-    'import/extensions': 'off',
-    'no-console': ['warn', { allow: ['info', 'error'] }],
-    'eslint-disable-next-line react/prop-types': 0,
-    'class-methods-use-this': 0,
-    'react/forbid-prop-types': 'off',
-    'react/no-array-index-key': 'off',
-    'react/require-default-props': 'off',
-    'react/prop-types': 'off',
   },
 };

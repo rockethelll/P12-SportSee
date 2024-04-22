@@ -1,4 +1,3 @@
-import PropTypes, { array } from 'prop-types';
 import { useEffect, useState } from 'react';
 import {
   Bar,
@@ -6,14 +5,21 @@ import {
   Legend,
   ReferenceLine,
   ResponsiveContainer,
-  Scatter,
   Tooltip,
   XAxis,
   YAxis,
 } from 'recharts';
+
 import HookManager from '@/services/HookManager';
 
-// Custom tooltip for the chart
+/**
+ * Custom tooltip for the chart
+ * @function CustomTooltip
+ * @param {object} props - The props of the component
+ * @param {boolean} props.active - The active state of the tooltip
+ * @param {array} props.payload - The payload of the tooltip
+ * @return {JSX.Element} - The tooltip component
+ */
 const CustomTooltip = ({ active, payload }) => {
   if (active && payload) {
     return (
@@ -35,19 +41,21 @@ const CustomTooltip = ({ active, payload }) => {
       </div>
     );
   }
-
   return null;
 };
 
-CustomTooltip.propTypes = {
-  payload: array,
-};
-
+/**
+ * User activity component
+ * @function UserActivity
+ * @param {object} props - The props of the component
+ * @param {string} props.id - The id of the user
+ * @return {JSX.Element} - The component
+ */
 const UserActivity = ({ id }) => {
   const [userData, setUserData] = useState();
-  const hookManager = new HookManager();
 
   useEffect(() => {
+    const hookManager = new HookManager();
     hookManager.getUserActivity(id, setUserData);
   }, [id]);
 
@@ -61,8 +69,8 @@ const UserActivity = ({ id }) => {
   });
 
   // Calculate ticks for YAxis
-  const calculateYAxisTicksTicks = (min, max) => {
-    const middle = (max + min) / 2;
+  const calculateYAxisTicks = (min, max) => {
+    const middle = (min + max) / 2;
     return [min, middle, max];
   };
 
@@ -71,27 +79,25 @@ const UserActivity = ({ id }) => {
     ? Math.min(
         ...chartData.map((session) => {
           return session.kilogram;
-        })
-      ) - 2
+        }),
+      ) - 1
     : 0;
 
   const maxPoids = chartData
     ? Math.max(
         ...chartData.map((session) => {
           return session.kilogram;
-        })
-      ) + 2
+        }),
+      ) + 1
     : 0;
 
   // Calculate ticks for YAxis
-  const yAxisTicks = calculateYAxisTicksTicks(minPoids, maxPoids);
-
-  console.info('userData', chartData);
+  const yAxisTicks = calculateYAxisTicks(minPoids, maxPoids);
 
   return (
-    <div className="topGraph">
+    <div className='topGraph'>
       <ResponsiveContainer
-        width="90%"
+        width='90%'
         height={180}
         style={{ margin: '0 auto' }}
       >
@@ -102,30 +108,30 @@ const UserActivity = ({ id }) => {
             return (
               <ReferenceLine
                 key={`${index}-${tick}`}
-                yAxisId="right"
+                yAxisId='right'
                 y={tick}
-                strokeDasharray="3 3"
-                stroke="#ccc"
+                strokeDasharray='3 3'
+                stroke='#ccc'
               />
             );
           })}
           {/* Setting up X and Y axes with custom ticks */}
           <XAxis
-            dataKey="day"
+            dataKey='day'
             tickLine={false}
             tick={{ fill: '#9B9EAC', fontSize: '14px' }}
             axisLine={{ stroke: '#9B9EAC', strokeWidth: 1 }}
             margin={{ left: 0 }}
             padding={{ left: -50, right: -50 }}
           />
-          <YAxis yAxisId="left" hide />
+          <YAxis yAxisId='left' hide />
           <YAxis
-            yAxisId="right"
-            orientation="right"
+            yAxisId='right'
+            orientation='right'
             domain={[minPoids, maxPoids]}
             ticks={yAxisTicks}
             tick={{ fill: '#9B9EAC', fontSize: '14px' }}
-            tickMargin={30}
+            tickMargin={25}
             tickLine={false}
             axisLine={false}
             tickFormatter={(value) => {
@@ -137,40 +143,34 @@ const UserActivity = ({ id }) => {
             wrapperStyle={{
               color: '#282D30',
               fontSize: '14px',
-              top: '-30px',
-              marginRight: '10px',
+              top: '-80px',
             }}
-            iconType="circle"
-            verticalAlign="top"
-            align="right"
+            iconType='circle'
+            verticalAlign='top'
+            align='right'
             iconSize={8}
           />
           <Bar
-            key="bar-1"
-            yAxisId="right"
-            dataKey="kilogram"
-            fill="#282D30"
-            name="Poids (kg)"
+            key='bar-1'
+            yAxisId='right'
+            dataKey='kilogram'
+            fill='#282D30'
+            name='Poids (kg)'
             radius={[3.5, 3.5, 0, 0]}
             barSize={7}
           />
           <Bar
-            yAxisId="left"
-            dataKey="calories"
-            fill="#ff0101"
-            name="Calories brûlées (kCal)"
+            yAxisId='left'
+            dataKey='calories'
+            fill='#ff0101'
+            name='Calories brûlées (kCal)'
             radius={[3.5, 3.5, 0, 0]}
             barSize={7}
           />
-          <Scatter dataKey="cnt" fill="red" />
         </BarChart>
       </ResponsiveContainer>
     </div>
   );
-};
-
-UserActivity.propTypes = {
-  id: PropTypes.string.isRequired,
 };
 
 export default UserActivity;

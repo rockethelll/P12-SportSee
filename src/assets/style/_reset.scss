@@ -1,11 +1,12 @@
 body,
 html {
-  min-height: 100vh;
+  // width: 100%;
   display: flex;
   flex-direction: column;
   margin: 0;
   padding: 0;
-  overflow-y: hidden;
+  min-width: 1024px;
+  min-height: 780px;
 }
 
 * {
@@ -17,7 +18,7 @@ a {
   text-decoration: none;
 }
 
-#root {
-  min-width: 1024px;
-  min-height: 780px;
-}
+// #root {
+//   width: 1024px;
+//   height: 780px;
+// }
