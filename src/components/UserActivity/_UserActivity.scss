@@ -1,5 +1,55 @@
 @use '@style/variables.scss' as *;
 
+.wrapper {
+  margin-bottom: 30px;
+  height: 320px;
+  width: 835px;
+  border-radius: 5px;
+  background: $background-grey;
+  box-shadow: $shadow;
+  padding: 25px;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  margin-right: 20px;
+
+  h2 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .legend {
+    display: flex;
+  }
+
+  .info {
+    display: flex;
+    align-items: center;
+  }
+
+  .icon {
+    height: 8px;
+    width: 8px;
+    border-radius: 50%;
+    align-self: center;
+    margin-left: 30px;
+    &.black {
+      background: $primary-color;
+    }
+    &.red {
+      background: $red;
+    }
+  }
+  .text {
+    font-size: 14px;
+    color: $text-grey;
+    margin-left: 10px;
+  }
+}
+
 .topGraph {
   box-shadow: 0px 2px 4px 0px #00000005;
   background-color: $background-grey;

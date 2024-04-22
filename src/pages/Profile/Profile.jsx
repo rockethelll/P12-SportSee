@@ -15,7 +15,6 @@ const Profile = () => {
     const fetchData = async () => {
       const request = await getData('USER_MAIN_DATA', id);
       setData(request);
-      console.log(request);
     };
     fetchData();
   }, [id]);
@@ -25,7 +24,7 @@ const Profile = () => {
       <UserGreeting firstName={data.userInfos?.firstName} />
       <div className='container__graph'>
         <div className='container__graph-left'>
-          {/* <UserActivity id={id} /> */}
+          <UserActivity id={id} />
         </div>
         <div className='container__graph-right'>
           <UserInfoCard

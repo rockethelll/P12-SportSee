@@ -1,9 +1,9 @@
 import { Link } from 'react-router-dom';
 
-const SelectUser = ({ id }) => {
+const SelectUser = ({ id, name }) => {
   return (
     <Link to={`/profile/${id}`} className='user-select'>
-      Utilisateur {id}
+      {name}
     </Link>
   );
 };
