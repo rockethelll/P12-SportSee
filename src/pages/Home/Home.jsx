@@ -1,5 +1,3 @@
-import React from 'react';
-
 import SelectUser from '@/components/SelectUser/SelectUser';
 
 const Home = () => {
