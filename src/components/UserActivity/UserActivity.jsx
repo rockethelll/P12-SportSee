@@ -10,7 +10,7 @@ import {
   YAxis,
 } from 'recharts';
 
-import HookManager from '@/services/HookManager';
+import getData from '@/services/api/getData';
 
 /**
  * Custom tooltip for the chart
@@ -52,15 +52,17 @@ const CustomTooltip = ({ active, payload }) => {
  * @return {JSX.Element} - The component
  */
 const UserActivity = ({ id }) => {
-  const [userData, setUserData] = useState();
+  const [data, setData] = useState();
 
   useEffect(() => {
-    const hookManager = new HookManager();
-    hookManager.getUserActivity(id, setUserData);
+    const fetchData = async () => {
+      const request = await getData('USER_MAIN_DATA', id);
+      setData(request);
+    };
   }, [id]);
 
   // Convert data to chart format
-  const chartData = userData?.sessions.map((session, index) => {
+  const chartData = data?.sessions.map((session, index) => {
     return {
       day: index + 1,
       kilogram: session.kilogram,
