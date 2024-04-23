@@ -16,7 +16,7 @@ import getData from '@/services/api/getData';
  * Render a BarChart with user activity Data
  * @return {JSX}
  */
-export default function BarCharts() {
+export default function UserBarChart() {
   const [data, setData] = useState([]);
   const { id } = useParams();
 
