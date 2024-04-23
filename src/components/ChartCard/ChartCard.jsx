@@ -1,7 +1,9 @@
-import React from 'react';
-
-const ChartCard = ({ children }) => {
-  return <div className='wrapper-card'>{children}</div>;
+const ChartCard = ({ children, backgroundColor }) => {
+  return (
+    <div className='wrapper-card' style={{ backgroundColor: backgroundColor }}>
+      {children}
+    </div>
+  );
 };
 
 export default ChartCard;

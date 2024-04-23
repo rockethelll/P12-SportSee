@@ -83,15 +83,15 @@ const UserAreaChart = () => {
       <Rectangle
         fill='#000000'
         opacity={0.1}
-        x={x}
-        width={width + 48}
+        x={x - 10}
+        width={width}
         height={height + 200}
       />
     );
   };
 
   return (
-    <ChartCard>
+    <ChartCard backgroundColor='#ff0000'>
       <div className='sessions-title'>Durée moyenne des sessions</div>
       <ResponsiveContainer>
         <AreaChart
