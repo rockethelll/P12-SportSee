@@ -5,6 +5,7 @@ import UserAreaChart from '@/components/UserAreaChart/UserAreaChart';
 import UserBarChart from '@/components/UserBarChart/UserBarChart';
 import UserGreeting from '@/components/UserGreeting/UserGreeting';
 import UserInfoCard from '@/components/UserInfoCard/UserInfoCard';
+import UserRadarChart from '@/components/UserRadarChart/UserRadarChart';
 import getData from '@/services/api/getData';
 
 const Profile = () => {
@@ -25,7 +26,10 @@ const Profile = () => {
       <div className='container__graph'>
         <div className='container__graph-left'>
           <UserBarChart id={id} />
-          <UserAreaChart id={id} />
+          <div className='bottom-graph'>
+            <UserAreaChart id={id} />
+            <UserRadarChart id={id} />
+          </div>
         </div>
         <div className='container__graph-right'>
           <UserInfoCard
