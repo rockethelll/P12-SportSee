@@ -1,0 +1,13 @@
+@use '@style/variables.scss' as *;
+
+.wrapper-card {
+  position: relative;
+  height: 265px;
+  width: 258px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 5px;
+  background-color: $red;
+  box-shadow: $shadow;
+}

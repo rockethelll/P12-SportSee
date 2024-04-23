@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
-// import DataRenderer from '@/components/DataRenderer/DataRenderer';
+import UserAreaChart from '@/components/UserAreaChart/UserAreaChart';
 import UserBarChart from '@/components/UserBarChart/UserBarChart';
 import UserGreeting from '@/components/UserGreeting/UserGreeting';
 import UserInfoCard from '@/components/UserInfoCard/UserInfoCard';
@@ -25,6 +25,7 @@ const Profile = () => {
       <div className='container__graph'>
         <div className='container__graph-left'>
           <UserBarChart id={id} />
+          <UserAreaChart id={id} />
         </div>
         <div className='container__graph-right'>
           <UserInfoCard

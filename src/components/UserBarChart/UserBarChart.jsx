@@ -12,28 +12,30 @@ import {
 
 import getData from '@/services/api/getData';
 
-/**
- * Render a BarChart with user activity Data
- * @return {JSX}
- */
 export default function UserBarChart() {
   const [data, setData] = useState([]);
   const { id } = useParams();
 
   useEffect(() => {
-    const data = async () => {
+    const fetchData = async () => {
       const request = await getData('USER_ACTIVITY', id);
       setData(request?.sessions);
-      console.log(request);
     };
-    data();
+    fetchData();
   }, [id]);
   if (data.length === 0) return null;
-  //format data.day
+  //format data.day to convert it to a number and start from 1
   for (let i = 0; i < data.length; i++) {
     data[i].day = i + 1;
   }
 
+  /**
+   * CustomTooltip function.
+   * @param {Object} props - The props object containing active and payload properties.
+   * @param {boolean} props.active - Indicates whether the tooltip is active.
+   * @param {Array} props.payload - The payload array containing data points.
+   * @returns {JSX.Element|null} A JSX element representing the tooltip content, or null if the tooltip is not active.
+   */
   const CustomTooltip = ({ active, payload }) => {
     if (active && payload) {
       return (
@@ -59,7 +61,7 @@ export default function UserBarChart() {
   };
 
   return (
-    <div className='wrapper'>
+    <div className='wrapper-activity'>
       <div className='head'>
         <h2>Activité quotidienne</h2>
         <div className='legend'>
