@@ -1,7 +1,3 @@
-/**
- * Sidebar component
- * @return {JSX.Element} - Sidebar component
- */
 const Sidebar = () => {
   return (
     <div className='sidebar'>
