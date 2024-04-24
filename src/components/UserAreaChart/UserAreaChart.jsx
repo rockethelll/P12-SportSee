@@ -19,7 +19,9 @@ const UserAreaChart = () => {
   useEffect(() => {
     const fetchData = async () => {
       const request = await getData('USER_AVERAGE_SESSIONS', id);
-      const convertDay = request?.sessions.map((item) => {
+
+      // Convert the day number to a string
+      const convertDay = request?.data.sessions.map((item) => {
         switch (item.day) {
           case 1:
             return { ...item, day: 'L' };

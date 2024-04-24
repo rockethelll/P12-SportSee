@@ -19,7 +19,7 @@ export default function UserBarChart() {
   useEffect(() => {
     const fetchData = async () => {
       const request = await getData('USER_ACTIVITY', id);
-      setData(request?.sessions);
+      setData(request?.data.sessions);
     };
     fetchData();
   }, [id]);

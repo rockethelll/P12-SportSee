@@ -18,7 +18,7 @@ const UserRadarChart = () => {
   useEffect(() => {
     const fetchData = async () => {
       const request = await getData('USER_PERFORMANCE', id);
-      const convertCategory = request?.data.map((item) => {
+      const convertCategory = request?.data.data.map((item) => {
         switch (item.kind) {
           case 1:
             return { ...item, kind: 'Cardio' };
