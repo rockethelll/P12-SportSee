@@ -10,7 +10,7 @@ import {
   YAxis,
 } from 'recharts';
 
-import getData from '@/services/api/getData';
+import getData from '@/services/getData';
 
 export default function UserBarChart() {
   const [data, setData] = useState([]);

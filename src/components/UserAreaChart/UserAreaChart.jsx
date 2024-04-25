@@ -10,7 +10,7 @@ import {
 } from 'recharts';
 
 import ChartCard from '@/components/ChartCard/ChartCard';
-import getData from '@/services/api/getData';
+import getData from '@/services/getData';
 
 const UserAreaChart = () => {
   const [data, setData] = useState([]);

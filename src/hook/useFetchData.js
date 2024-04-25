@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import getData from '@/services/api/getData';
+import getData from '@/services/getData';
 
 const useFetchData = ({ id }) => {
   const [data, setData] = useState([]);

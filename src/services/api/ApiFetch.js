@@ -7,6 +7,7 @@ const api = axios.create({
 export const getUserInfos = async (id) => {
   try {
     const response = await api.get(`/user/${id}`);
+    alert('API data is being used')
     return response.data;
   } catch (error) {
     throw new Error('User not found');
