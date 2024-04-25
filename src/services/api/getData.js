@@ -1,14 +1,15 @@
-import {} from // getUserAverageSessions,
-// getUserByActivity,
-// getUserInfos,
-// getUserPerformance,
-'@/services/api/ApiFetch';
 import {
   getUserAverageSessions,
   getUserByActivity,
   getUserInfos,
   getUserPerformance,
-} from '@/services/mockData';
+} from '@/services/api/ApiFetch';
+// import {
+// getUserAverageSessions,
+// getUserByActivity,
+// getUserInfos,
+// getUserPerformance,
+// } from '@/services/mockData';
 
 /**
  * Function that retrieves different types of data based on the specified type and user ID.
