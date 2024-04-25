@@ -1,15 +1,14 @@
+import {} from // getUserAverageSessions,
+// getUserByActivity,
+// getUserInfos,
+// getUserPerformance,
+'@/services/api/apiFetch';
 import {
   getUserAverageSessions,
   getUserByActivity,
   getUserInfos,
   getUserPerformance,
-} from '@/services/mockData';
-// import {
-//   getUserAverageSessions,
-//   getUserByActivity,
-//   getUserInfos,
-//   getUserPerformance,
-// } from '@/services/api/ApiFetch';
+} from '@/services/Mock/mockFetch';
 
 /**
  * Function that retrieves different types of data based on the specified type and user ID.
@@ -22,16 +21,16 @@ const getData = async (type, id) => {
 
   switch (type) {
     case 'USER_MAIN_DATA':
-      data = getUserInfos(id).data;
+      data = getUserInfos(id);
       break;
     case 'USER_ACTIVITY':
-      data = getUserByActivity(id).data;
+      data = getUserByActivity(id);
       break;
     case 'USER_AVERAGE_SESSIONS':
-      data = getUserAverageSessions(id).data;
+      data = getUserAverageSessions(id);
       break;
     case 'USER_PERFORMANCE':
-      data = getUserPerformance(id).data;
+      data = getUserPerformance(id);
       break;
     default:
       throw new Error('Invalid data type');

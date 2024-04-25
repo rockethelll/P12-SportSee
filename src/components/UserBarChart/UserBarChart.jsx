@@ -10,7 +10,7 @@ import {
   YAxis,
 } from 'recharts';
 
-import getData from '@/services/api/getData';
+import getData from '@/services/getData';
 
 export default function UserBarChart() {
   const [data, setData] = useState([]);
@@ -19,7 +19,7 @@ export default function UserBarChart() {
   useEffect(() => {
     const fetchData = async () => {
       const request = await getData('USER_ACTIVITY', id);
-      setData(request?.sessions);
+      setData(request?.data.sessions);
     };
     fetchData();
   }, [id]);
