@@ -22,7 +22,7 @@ const useFetchMainData = ({ id }) => {
           setError(error.message || "Une erreur s'est produite.");
           setIsLoading(false);
         }
-      }, 1000); // 1 seconde
+      }, 500); // 0.5 seconde
     };
     fetchData();
   }, [id]);
