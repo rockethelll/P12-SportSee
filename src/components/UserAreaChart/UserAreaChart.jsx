@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
 import {
   Area,
   AreaChart,
@@ -12,9 +11,8 @@ import {
 import ChartCard from '@/components/ChartCard/ChartCard';
 import getData from '@/services/getData';
 
-const UserAreaChart = () => {
+const UserAreaChart = ({ id }) => {
   const [data, setData] = useState([]);
-  const { id } = useParams();
 
   useEffect(() => {
     const fetchData = async () => {

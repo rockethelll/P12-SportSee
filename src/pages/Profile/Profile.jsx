@@ -7,11 +7,11 @@ import UserGreeting from '@/components/UserGreeting/UserGreeting';
 import UserInfoCard from '@/components/UserInfoCard/UserInfoCard';
 import UserPieChart from '@/components/UserPieChart/UserPieChart';
 import UserRadarChart from '@/components/UserRadarChart/UserRadarChart';
-import useFetchData from '@/hook/useFetchData';
+import useFetchMainData from '@/hook/useFetchMainData';
 
 const Profile = () => {
   const { id } = useParams();
-  const { data, isLoading, error } = useFetchData({ id });
+  const { data, isLoading, error } = useFetchMainData({ id });
 
   return (
     <div className='container'>
@@ -23,7 +23,7 @@ const Profile = () => {
             <div className='bottom-graph'>
               <UserAreaChart id={id} />
               <UserRadarChart id={id} />
-              <UserPieChart id={id} data={data} />
+              <UserPieChart data={data} />
             </div>
           </div>
           <div className='container__graph-right'>

@@ -8,7 +8,7 @@ import {
 export const getUserInfos = (id) => {
   try {
     const response = USER_MAIN_DATA.find((user) => user.id === +id);
-    alert('Mocked data is being used');
+    // alert('Mocked data is being used');
     return { data: response };
   } catch (error) {
     throw new Error('User not found');
