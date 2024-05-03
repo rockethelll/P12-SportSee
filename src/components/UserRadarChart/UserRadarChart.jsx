@@ -1,5 +1,4 @@
 import { useEffect, useState } from 'react';
-import { useParams } from 'react-router';
 import {
   PolarAngleAxis,
   PolarGrid,
@@ -11,9 +10,8 @@ import {
 import ChartCard from '@/components/ChartCard/ChartCard';
 import getData from '@/services/getData';
 
-const UserRadarChart = () => {
+const UserRadarChart = ({ id }) => {
   const [data, setData] = useState([]);
-  const { id } = useParams();
 
   useEffect(() => {
     const fetchData = async () => {

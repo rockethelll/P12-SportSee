@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 
 import getData from '@/services/getData';
 
-const useFetchData = ({ id }) => {
+const useFetchMainData = ({ id }) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
@@ -30,4 +30,4 @@ const useFetchData = ({ id }) => {
   return { data, isLoading, error };
 };
 
-export default useFetchData;
+export default useFetchMainData;
