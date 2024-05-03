@@ -9,7 +9,7 @@ import {
   getUserByActivity,
   getUserInfos,
   getUserPerformance,
-} from '@/services/mock/mockFetch';
+} from '@/services/mock-1/mockFetch';
 
 /**
  * Function that retrieves different types of data based on the specified type and user ID.
