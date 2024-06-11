@@ -1,6 +1,6 @@
 const ChartCard = ({ children, backgroundColor }) => {
   return (
-    <div className='wrapper-card' style={{ backgroundColor: backgroundColor }}>
+    <div className='chart-card' style={{ backgroundColor: backgroundColor }}>
       {children}
     </div>
   );

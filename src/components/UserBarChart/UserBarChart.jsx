@@ -61,17 +61,19 @@ export default function UserBarChart() {
   };
 
   return (
-    <div className='wrapper-activity'>
-      <div className='head'>
-        <h2>Activité quotidienne</h2>
-        <div className='legend'>
-          <div className='info'>
-            <div className='icon black' />
-            <div className='text'>Poids (kg)</div>
+    <div className='mb-8 h-80 w-[650px] lg:h-72 xl:w-[835px] rounded-md bg-tertiary shadow-custom p-6'>
+      <div className='flex justify-between mb-5 mr-5'>
+        <h2 className='text-base font-bold'>Activité quotidienne</h2>
+        <div className='flex'>
+          <div className='flex items-center'>
+            <div className='self-center w-2 h-2 ml-8 rounded-full bg-primary' />
+            <div className='text-sm ml-2.5 text-customGrey'>Poids (kg)</div>
           </div>
-          <div className='info'>
-            <div className='icon red' />
-            <div className='text'>Calories brûlées (kCal)</div>
+          <div className='flex items-center'>
+            <div className='self-center w-2 h-2 ml-8 rounded-full bg-secondary' />
+            <div className='text-sm ml-2.5 text-customGrey'>
+              Calories brûlées (kCal)
+            </div>
           </div>
         </div>
       </div>

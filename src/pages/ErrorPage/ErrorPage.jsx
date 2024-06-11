@@ -6,11 +6,12 @@ import { Link } from 'react-router-dom';
  */
 const ErrorPage = () => {
   return (
-    <div className='error404'>
+    <div className='flex flex-col items-center justify-center w-full text-2xl font-bold h-svh'>
       <p>
-        Erreur <span>404</span> la page demandée est introuvable
+        Erreur <span className='text-secondary'>404</span>, la page demandée est
+        introuvable
       </p>
-      <Link to='/profile/12' className='link-error'>
+      <Link to='/profile/12' className='mt-10 text-base'>
         Retourner sur la page d'accueil
       </Link>
     </div>

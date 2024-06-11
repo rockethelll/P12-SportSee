@@ -4,13 +4,13 @@ import Router from '@/Router/Router';
 
 const App = () => {
   return (
-    <>
+    <div className='overflow-auto min-w-screen-min min-h-screen-min'>
       <Navbar />
-      <div className='main'>
+      <div className=''>
         <Sidebar />
         <Router />
       </div>
-    </>
+    </div>
   );
 };
 

@@ -45,7 +45,7 @@ const UserRadarChart = ({ id }) => {
   return (
     <ChartCard backgroundColor='#282D30'>
       <ResponsiveContainer width='100%' height='100%'>
-        <RadarChart cx='50%' cy='50%' outerRadius='65%' data={data}>
+        <RadarChart cx='50%' cy='50%' outerRadius='50%' data={data}>
           <PolarGrid />
           <PolarAngleAxis
             dataKey='kind'

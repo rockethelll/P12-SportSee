@@ -14,19 +14,20 @@ const Profile = () => {
   const { data, isLoading, error } = useFetchMainData({ id });
 
   return (
-    <div className='container'>
+    <div className='container pt-8 mx-auto mt-16 xl:pt-16 xl:mt-24 xl:ml-32 pl-28'>
+      {/* <div className='container px-4 mx-auto translate-x-20 translate-y-20 xl:translate-y-32 lg:px-8 xl:px-32'> */}
       <DataRenderer error={error} isLoading={isLoading}>
         <UserGreeting firstName={data.userInfos?.firstName} />
-        <div className='container__graph'>
-          <div className='container__graph-left'>
+        <div className='flex'>
+          <div className='mr-8 '>
             <UserBarChart id={id} />
-            <div className='bottom-graph'>
+            <div className='flex justify-between mt-8'>
               <UserAreaChart id={id} />
               <UserRadarChart id={id} />
               <UserPieChart data={data} />
             </div>
           </div>
-          <div className='container__graph-right'>
+          <div className='space-y-11 xl:space-y-10'>
             <UserInfoCard
               category='calories'
               text='Calories'

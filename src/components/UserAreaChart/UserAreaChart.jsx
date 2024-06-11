@@ -92,7 +92,9 @@ const UserAreaChart = ({ id }) => {
 
   return (
     <ChartCard backgroundColor='#ff0000'>
-      <div className='sessions-title'>Durée moyenne des sessions</div>
+      <div className='absolute px-8 text-[15px] pt-7 text-[#ffffffb3] leading-6'>
+        Durée moyenne des sessions
+      </div>
       <ResponsiveContainer>
         <AreaChart
           data={data}
