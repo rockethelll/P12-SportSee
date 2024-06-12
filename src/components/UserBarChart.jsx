@@ -61,7 +61,7 @@ export default function UserBarChart() {
   };
 
   return (
-    <div className='mb-8 h-80 w-[650px] lg:h-72 xl:w-[835px] rounded-md bg-tertiary shadow-custom p-6'>
+    <div className='mb-8 h-80 w-[650px] lg:h-72 2xl:h-90 xl:w-[750px] 2xl:w-[835px] rounded-md bg-tertiary shadow-custom p-6'>
       <div className='flex justify-between mb-5 mr-5'>
         <h2 className='text-base font-bold'>Activité quotidienne</h2>
         <div className='flex'>

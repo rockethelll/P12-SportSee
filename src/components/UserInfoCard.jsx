@@ -2,7 +2,7 @@ const UserInfoCard = ({ category, text, data }) => {
   return (
     <div className='card'>
       <img
-        className='w-[60px] h-[60px] mr-6 ml-8'
+        className='w-16 h-16 ml-6 mr-6'
         src={`/images/${category}.png`}
         alt={category}
       />

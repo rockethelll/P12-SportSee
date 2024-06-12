@@ -31,13 +31,14 @@
     @apply w-12 h-12 text-white cursor-pointer xl:w-16 xl:h-16;
   }
   .chart-card {
-    @apply relative h-[200px] w-[190px] xl:h-[265px] xl:w-[258px] flex flex-col justify-between rounded-md shadow-custom;
+    @apply relative h-[200px] w-[190px] 2xl:h-[265px] 2xl:w-[258px] flex flex-col justify-between rounded-md shadow-custom;
   }
   .card {
-    @apply flex items-center h-24 rounded-md xl:h-32 xl:w-64 bg-tertiary shadow-custom w-52;
+    @apply flex items-center h-24 rounded-md 2xl:h-32 2xl:w-64 bg-tertiary shadow-custom w-52;
   }
 }
 
+/* Spinner CSS */
 .lds-spinner,
 .lds-spinner div,
 .lds-spinner div:after {

@@ -9,7 +9,7 @@ const useFetchMainData = ({ id }) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      // Simuler un temps de chargement de 1 seconde
+      // Simulate a delay for the request
       setTimeout(async () => {
         setError(null);
         setIsLoading(true);

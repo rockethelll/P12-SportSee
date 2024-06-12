@@ -25,6 +25,7 @@ This project is a React-based web application that utilizes an API to display us
 - Vite
 - React
 - React-router-dom
+- Tailwindcss
 - Node.js (backend)
 - Recharts
 
@@ -52,6 +53,7 @@ yarn dev
 ## How to switch between mocked data and API
 
 - Go to /src/services/getData.js
-- uncomment the import you would like to use
-- comment the other import that won't be use
+- Uncomment the import you would like to use
+- Comment the other import that won't be use
+- Launch backend server
   (You'll receive an alert message when you use the API)

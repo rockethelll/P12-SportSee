@@ -1,4 +1,4 @@
-import Spinner from '@/components/ui/Spinner/Spinner';
+import Spinner from '@/components/ui/Spinner';
 
 const DataRenderer = ({ children, error, isLoading }) => {
   if (isLoading) {

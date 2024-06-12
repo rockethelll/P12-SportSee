@@ -1,4 +1,4 @@
-import SelectUser from '@/components/SelectUser/SelectUser';
+import SelectUser from '@/components/SelectUser';
 
 const Home = () => {
   return (

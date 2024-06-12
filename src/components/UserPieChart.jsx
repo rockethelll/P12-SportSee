@@ -1,6 +1,6 @@
 import { Cell, Pie, PieChart, ResponsiveContainer } from 'recharts';
 
-import ChartCard from '@/components/ChartCard/ChartCard';
+import ChartCard from '@/components/ui/ChartCard';
 
 const UserPieChart = ({ data }) => {
   // Calculate the score for the pie chart : 1 - score is the second part of the pie
@@ -13,6 +13,7 @@ const UserPieChart = ({ data }) => {
     <ChartCard backgroundColor='#fbfbfb'>
       <ResponsiveContainer width='100%' height='100%'>
         <PieChart>
+          <circle cx='50%' cy='50%' r='30%' fill='#fff' />
           <text
             x='19%'
             y='12%'
@@ -54,8 +55,8 @@ const UserPieChart = ({ data }) => {
           <Pie
             data={score}
             dataKey='value'
-            innerRadius={70}
-            outerRadius={85}
+            innerRadius='65%'
+            outerRadius='80%'
             startAngle={180}
             endAngle={-180}
           >
@@ -63,7 +64,7 @@ const UserPieChart = ({ data }) => {
               index === 0 ? (
                 <Cell key={`cell-${index}`} cornerRadius={10} fill='#ff0000' />
               ) : (
-                <Cell key={`cell-${entry}`} fill='#FBFBFB' />
+                <Cell key={`cell-${entry}`} fill='#FBFBFB' stroke='#FBFBFB' />
               ),
             )}
           </Pie>

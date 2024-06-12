@@ -8,7 +8,7 @@ import {
   XAxis,
 } from 'recharts';
 
-import ChartCard from '@/components/ChartCard/ChartCard';
+import ChartCard from '@/components/ui/ChartCard';
 import getData from '@/services/getData';
 
 const UserAreaChart = ({ id }) => {
