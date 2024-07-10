@@ -1,17 +1,20 @@
+import { Outlet } from 'react-router';
+import { Toaster } from 'sonner';
+
 import Navbar from '@/components/Navbar';
 import Sidebar from '@/components/Sidebar';
-import Router from '@/router/router';
 
-const App = () => {
+const Layout = () => {
   return (
     <div className='overflow-auto min-w-screen-min min-h-screen-min'>
       <Navbar />
       <div>
         <Sidebar />
-        <Router />
+        <Toaster closeButton richColors position='top-right' />
+        <Outlet />
       </div>
     </div>
   );
 };
 
-export default App;
+export default Layout;

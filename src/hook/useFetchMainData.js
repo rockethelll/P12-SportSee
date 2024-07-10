@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router';
 
 import getData from '@/services/getData';
 
@@ -6,6 +7,7 @@ const useFetchMainData = ({ id }) => {
   const [data, setData] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState(null);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -18,14 +20,14 @@ const useFetchMainData = ({ id }) => {
           setData(request.data);
           setIsLoading(false);
         } catch (error) {
-          console.log('error', error);
           setError(error.message || "Une erreur s'est produite.");
           setIsLoading(false);
+          navigate('/error');
         }
       }, 500); // 0.5 seconde
     };
     fetchData();
-  }, [id]);
+  }, [id, navigate]);
 
   return { data, isLoading, error };
 };

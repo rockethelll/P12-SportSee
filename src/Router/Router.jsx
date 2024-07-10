@@ -1,5 +1,6 @@
-import { Route, Routes } from 'react-router-dom';
+import { createBrowserRouter } from 'react-router-dom';
 
+import Layout from '@/components/Layout';
 import ErrorPage from '@/pages/ErrorPage';
 import Home from '@/pages/Home';
 import Profile from '@/pages/Profile';
@@ -8,14 +9,24 @@ import Profile from '@/pages/Profile';
  * Router component responsible for defining application routes.
  * @returns {JSX.Element} - The Router JSX element.
  */
-const Router = () => {
-  return (
-    <Routes>
-      <Route path='/' element={<Home />} />
-      <Route path='/profile/:id' element={<Profile />} />
-      <Route path='*' element={<ErrorPage />} />
-    </Routes>
-  );
-};
-
-export default Router;
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <Layout />,
+    errorElement: <ErrorPage />,
+    children: [
+      {
+        path: '/',
+        element: <Home />,
+        errorElement: <ErrorPage />,
+      },
+      {
+        path: '/profile/:id',
+        element: <Profile />,
+        errorElement: <ErrorPage />,
+      },
+      { path: 'error', element: <ErrorPage /> },
+    ],
+  },
+]);
+export default router;

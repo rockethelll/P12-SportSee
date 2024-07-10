@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { toast } from 'sonner';
 
 const api = axios.create({
   baseURL: `http://localhost:3000`,
@@ -7,7 +8,7 @@ const api = axios.create({
 export const getUserInfos = async (id) => {
   try {
     const response = await api.get(`/user/${id}`);
-    alert('API data is being used');
+    toast.info('Api is being used');
     return response.data;
   } catch (error) {
     throw new Error('User not found');

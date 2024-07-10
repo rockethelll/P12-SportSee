@@ -1,3 +1,5 @@
+import { toast } from 'sonner';
+
 import {
   USER_ACTIVITY,
   USER_AVERAGE_SESSIONS,
@@ -9,6 +11,7 @@ export const getUserInfos = (id) => {
   try {
     const response = USER_MAIN_DATA.find((user) => user.id === +id);
     // alert('Mocked data is being used');
+    toast.info('Mocked data is being used');
     return { data: response };
   } catch (error) {
     throw new Error('User not found');
